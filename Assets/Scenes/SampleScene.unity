@@ -512,10 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e06fb09722d44f0cb9a3c6ad6cd46c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetA: {fileID: 600186536}
-  _targetB: {fileID: 1093386235}
-  _targetC: {fileID: 384359334}
-  _speed: 2
+  _waypoints:
+  - {fileID: 600186536}
+  - {fileID: 1093386235}
+  - {fileID: 384359334}
+  _speed: 5
   _arrivalthreshold: 0.1
 --- !u!65 &1656322558
 BoxCollider:

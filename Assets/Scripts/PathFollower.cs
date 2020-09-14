@@ -2,40 +2,33 @@
 
 public class PathFollower : MonoBehaviour
 {
-    // Dit is niet DRY én niet dynamisch...
-    // kun je oplossen door een array te gebruiken
-    [SerializeField] private Transform _targetA;
-    [SerializeField] private Transform _targetB;
-    [SerializeField] private Transform _targetC;
-    
+    [SerializeField] private Transform[] _waypoints;
+
     [SerializeField] private float _speed;
     [SerializeField] private float _arrivalthreshold = 0.1f;
 
-    private Transform _currentWaypoint;
+    private int _currentWaypointIndex;
 
     private void Start()
     {
-        _currentWaypoint = _targetA;
+        _currentWaypointIndex = 0;
     }
 
     private void Update()
     {
-        Vector3 heightOffsetPosition = new Vector3(_currentWaypoint.position.x, transform.position.y, _currentWaypoint.position.z);
+        Vector3 heightOffsetPosition = new Vector3(_waypoints[_currentWaypointIndex].position.x, 
+            transform.position.y, _waypoints[_currentWaypointIndex].position.z);
         float distance = Vector3.Distance(transform.position, heightOffsetPosition);
-        
+
         if (distance <= _arrivalthreshold)
         {
-            if (_currentWaypoint == _targetA)
+            if (_currentWaypointIndex == _waypoints.Length-1)
             {
-                _currentWaypoint = _targetB;
+                print("Ik ben bij het eindpunt");
             }
-            else if (_currentWaypoint == _targetB)
+            else
             {
-                _currentWaypoint = _targetC;
-            }
-            else if (_currentWaypoint == _targetC)
-            {
-                print("Ik ben bij het eindpunt!");
+                _currentWaypointIndex++;
             }
         }
         else
