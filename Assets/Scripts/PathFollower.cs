@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PathFollower : MonoBehaviour
 {
-    [SerializeField] private Transform[] _waypoints;
+    [SerializeField] private Waypoint[] _waypoints;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _arrivalthreshold = 0.1f;
 
     [SerializeField] private UnityEvent _OnPathComplete;
+    public UnityEvent OnPathComplete => _OnPathComplete;
 
     private int _currentWaypointIndex;
 
@@ -19,8 +21,8 @@ public class PathFollower : MonoBehaviour
 
     private void Update()
     {
-        Vector3 heightOffsetPosition = new Vector3(_waypoints[_currentWaypointIndex].position.x,
-            transform.position.y, _waypoints[_currentWaypointIndex].position.z);
+        Vector3 heightOffsetPosition = new Vector3(_waypoints[_currentWaypointIndex].Position.x,
+            transform.position.y, _waypoints[_currentWaypointIndex].Position.z);
         float distance = Vector3.Distance(transform.position, heightOffsetPosition);
 
         if (distance <= _arrivalthreshold)
@@ -40,5 +42,10 @@ public class PathFollower : MonoBehaviour
             transform.LookAt(heightOffsetPosition);
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
+    }
+
+    public void SetPath(Waypoint[] waypoints)
+    {
+        _waypoints = waypoints;
     }
 }

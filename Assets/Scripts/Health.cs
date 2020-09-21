@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class Health : MonoBehaviour
         _currentHealth = _startHealth;
     }
 
-    public void TakeDamage(float dmg)
+    // Called from UnityEvent
+    public void TakeDamage(float dmg = 1f)
     {
         _currentHealth -= dmg;
         print("Ik krijg schade...");
