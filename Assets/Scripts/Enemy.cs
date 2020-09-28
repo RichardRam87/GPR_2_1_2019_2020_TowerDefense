@@ -23,9 +23,6 @@ public class Enemy : MonoBehaviour
     private void SetupEnemy()
     {
         Health playerHealth = GameObject.FindWithTag("PlayerBase").GetComponent<Health>();
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>().OrderBy(wp => wp.gameObject.name).ToArray();
-        
         _pathFollower.OnPathComplete.AddListener(() => playerHealth.TakeDamage(_damageAmount));
-        _pathFollower.SetPath(waypoints);
     }
 }
