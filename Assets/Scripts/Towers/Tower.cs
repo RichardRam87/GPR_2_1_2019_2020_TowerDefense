@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    private EnemyInRangeChecker _rangeChecker;
-    private Enemy _target;
+    protected EnemyInRangeChecker _rangeChecker;
+
     private void Awake()
     {
         _rangeChecker = GetComponent<EnemyInRangeChecker>();
@@ -19,15 +19,11 @@ public class Tower : MonoBehaviour
         
         Attack();
     }
-    
-    private bool CanAttack()
+
+    protected virtual bool CanAttack()
     {
-        _target = _rangeChecker.GetFirstEnemyInRange();
-        return _target != null;
+        return false;
     }
 
-    private void Attack()
-    {
-        Debug.Log("Ik val aan!");
-    }
+    protected virtual void Attack() { }
 }
