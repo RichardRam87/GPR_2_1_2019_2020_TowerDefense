@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _damageAmount;
 
     private PathFollower _pathFollower;
+    private Health _health;
 
     private void Awake()
     {
@@ -18,6 +19,14 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         SetupEnemy();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            _health.TakeDamage(1);
+        }
     }
 
     private void SetupEnemy()
