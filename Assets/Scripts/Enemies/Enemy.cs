@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _pathFollower = GetComponent<PathFollower>();
+        _health = GetComponent<Health>();
     }
 
     void Start()

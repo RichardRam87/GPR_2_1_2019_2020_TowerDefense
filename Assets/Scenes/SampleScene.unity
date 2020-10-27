@@ -208,13 +208,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9647f9c3fce3e4f78ba4339f73001b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startHealth: 2
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
-  _startHealth: 2
 --- !u!1 &379633771
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +759,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5946603498733802781, guid: c04fe793ee108421495b3a881786ce40,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6487082906691834958, guid: c04fe793ee108421495b3a881786ce40,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -818,6 +823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963238921654088582, guid: c04fe793ee108421495b3a881786ce40,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6963238921654088583, guid: c04fe793ee108421495b3a881786ce40,
         type: 3}

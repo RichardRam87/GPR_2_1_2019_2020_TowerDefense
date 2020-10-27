@@ -11,9 +11,11 @@ public class Health : MonoBehaviour
     [Serializable]
     public class OnDeathEvent : UnityEvent<Health> {}
 
+    [SerializeField] private float _startHealth = 3;
+    
     public OnTakeDamageEvent OnTakeDamage;
     public OnDeathEvent OnDeath;
-    [SerializeField] private float _startHealth = 3;
+    
 
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
@@ -26,7 +28,7 @@ public class Health : MonoBehaviour
     // Called from UnityEvent
     public void TakeDamage(float dmg = 1f)
     {
-        _currentHealth -= dmg;
+        _currentHealth = Mathf.Max(_currentHealth - dmg, 0);
         OnTakeDamage?.Invoke(this);
         
         if (_currentHealth <= 0)
@@ -34,5 +36,10 @@ public class Health : MonoBehaviour
             print("Ik ben dood");
             OnDeath?.Invoke(this);
         }
+    }
+
+    public float GetNormalizedHealth()
+    {
+        return _currentHealth / _startHealth;
     }
 }
