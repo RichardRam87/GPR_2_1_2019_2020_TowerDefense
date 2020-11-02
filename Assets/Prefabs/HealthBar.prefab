@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foreground: {fileID: 7600609199353945742}
-  _rootCanvas: {fileID: 3498098377149335602}
 --- !u!1 &4692860408617414283
 GameObject:
   m_ObjectHideFlags: 0

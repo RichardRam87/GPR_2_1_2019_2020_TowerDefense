@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SingleTargetTower
       objectReference: {fileID: 0}
+    - target: {fileID: 4601635302758515205, guid: 223c91066706f49009d1d7f7cb6033a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223c91066706f49009d1d7f7cb6033a4, type: 3}
 --- !u!1 &171496627 stripped
@@ -208,11 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9647f9c3fce3e4f78ba4339f73001b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startHealth: 2
+  _startHealth: 5
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
-  OnDeath:
+  OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &379633771
@@ -345,6 +350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MultiTargetTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 330546010141141968, guid: 30764aefefe2f4dba81e212c5c72e92b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3911266474435037815, guid: 30764aefefe2f4dba81e212c5c72e92b,
         type: 3}
@@ -627,6 +637,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2051156365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1463696030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 733519720838787039, guid: c04fe793ee108421495b3a881786ce40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2051156365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463696028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2d6d3964eeb48e3881d04e1a87d617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1463696035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -827,6 +849,21 @@ PrefabInstance:
     - target: {fileID: 6963238921654088582, guid: c04fe793ee108421495b3a881786ce40,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963238921654088582, guid: c04fe793ee108421495b3a881786ce40,
+        type: 3}
+      propertyPath: _OnPathComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1463696030}
+    - target: {fileID: 6963238921654088582, guid: c04fe793ee108421495b3a881786ce40,
+        type: 3}
+      propertyPath: _OnPathComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963238921654088582, guid: c04fe793ee108421495b3a881786ce40,
+        type: 3}
+      propertyPath: _OnPathComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6963238921654088583, guid: c04fe793ee108421495b3a881786ce40,

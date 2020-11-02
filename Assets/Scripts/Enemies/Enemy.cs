@@ -38,4 +38,9 @@ public class Enemy : MonoBehaviour
         _pathFollower.OnPathComplete.AddListener(() => playerHealth.TakeDamage(_damageAmount));
         _pathFollower.SetPath(waypoints);
     }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
 }
